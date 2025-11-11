@@ -255,8 +255,16 @@
       body { padding-top: 64px; }
     }
 
-    a {
-      color: #ff4081;
+    .a-btn {
+      background-color: var(--accent-2);
+      color: #fff;
+      border-radius: 6px;
+      padding: 5px 5px;
+      text-align: center;
+      font-weight: 600;
+      border: none;
+      transition: transform .15s, background-color .15s;
+      color: #000;
       text-decoration: none;
     }
 
@@ -324,7 +332,7 @@
       <div class="project-card">
         <h3>💼 Portfolio</h3>
         <p>Портфолио с моими лучшими работами в области программирования и дизайна.</p>
-        <a href="https://ilia-good.github.io/Portfolio">Junior Frontend Developer</a>
+        <a class="a-btn" href="https://ilia-good.github.io/Portfolio" target="_blank" style="display: block;">Portfolio</a>
       </div>
     </div>
   </section>
