@@ -105,7 +105,7 @@ a.button-link {
         <input type="email" name="email" placeholder="Ваш email" required>
         <textarea name="message" placeholder="Сообщение" rows="5" required></textarea>
         <input type="text" name="middle_name" autocomplete="off" tabindex="-1" class="sb-hp">
-        <button type="submit">Send</button>
+        <button type="submit">send</button>
       </form>
       <div class="sb-contact-success" hidden>So beautiful that it went</div>
       <div class="sb-contact-error" hidden>Wrong. Come back later.</div>
@@ -121,7 +121,7 @@ a.button-link {
         var error = card ? card.querySelector('.sb-contact-error') : null;
         if (success) success.hidden = true;
         if (error) { error.hidden = true; error.textContent = 'Wrong. Come back later.'; }
-        var endpoints = ['https://sitebuilding.onrender.com/api/contact/send', 'https://sitebuilding.onrender.com/api/contact/send'];
+        var endpoints = ['https://sitebuilding.onrender.com/api/contact/send'];
         endpoints = endpoints.filter(function(v, i, arr) { return arr.indexOf(v) === i; });
         var payload = {
           siteId: form.dataset.siteId,
