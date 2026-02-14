@@ -35,7 +35,7 @@ a.button-link {
   display: inline-block;
   border-radius: 999px;
   border: none;
-  background: #0051ff;
+  background: #2563eb;
   color: #fff;
   text-decoration: none;
   cursor: pointer;
@@ -68,7 +68,7 @@ a.button-link {
   border-radius: 12px;
   padding: .7rem 1rem;
   font-weight: 600;
-  background: #0051ff;
+  background: #2563eb;
   color: #fff;
   cursor: pointer;
 }
@@ -94,22 +94,26 @@ a.button-link {
 <body>
   <div class="site-title effect-shadow" style="text-align:center;color:#f8fafc">First</div>
   <header class="site-header effect-shadow" style="text-align:center;color:#e5e7eb">
-    <div>Добро пожаловать</div>
+    <div>Запуск за 7 дней</div>
   </header>
   <main>
+    <div class="" style="text-align:center;color:#e5e7eb;"><h2>Почему мы</h2></div>
+    <div class="" style="text-align:center;color:#e5e7eb;"><p>Короткое описание продукта и ключевых выгод.</p></div>
+    <div class="" style="text-align:center;color:#e5e7eb;"><section><h3>Особенности</h3></section></div>
+    <div style="text-align:center;"><a href="https://example.com" target="_blank" rel="noopener noreferrer" class="button-link " style="padding:8px 16px;background:#2563eb;color:#fff">Попробовать</a></div>
     <div class="contact-form-shell " style="text-align:center;">
-      <form class="sb-contact-form" data-site-id="423944a7-2049-415e-868e-674ab639d29f">
+      <form class="sb-contact-form" data-site-id="692e297e-0bb6-41a9-8e97-5520cf35a47b">
         <input type="text" name="name" placeholder="Ваше имя" required>
         <input type="email" name="email" placeholder="Ваш email" required>
         <textarea name="message" placeholder="Сообщение" rows="5" required></textarea>
         <input type="text" name="honeypot" autocomplete="off" tabindex="-1" class="sb-hp">
-        <button type="submit" style="background:#0051ff">Send</button>
+        <button type="submit" style="background:#2563eb">Отправить</button>
       </form>
       <div class="sb-contact-success" hidden>Сообщение отправлено.</div>
       <div class="sb-contact-error" hidden>Ошибка. Попробуйте позже.</div>
     </div>
   </main>
-  <footer class="effect-shadow" style="text-align:center;color:#e5e7eb"><div>Спасибо за внимание!</div></footer>
+  <footer class="effect-shadow" style="text-align:center;color:#e5e7eb"><div>Оставьте заявку на демо</div></footer>
   <script>
     document.querySelectorAll('.sb-contact-form').forEach(function(form) {
       form.addEventListener('submit', async function(event) {
@@ -119,7 +123,7 @@ a.button-link {
         var error = card ? card.querySelector('.sb-contact-error') : null;
         if (success) success.hidden = true;
         if (error) { error.hidden = true; error.textContent = 'Ошибка. Попробуйте позже.'; }
-        var endpoints = ['https://sitebuilding.onrender.com/api/contact/send', 'https://sitebuilding.onrender.com/api/contact/send', '/api/contact/send'];
+        var endpoints = ['https://sitebuilding.onrender.com/api/contact/send-simple', 'https://sitebuilding.onrender.com/api/contact/send-simple', '/api/contact/send-simple', 'https://sitebuilding.onrender.com/api/contact/send', 'https://sitebuilding.onrender.com/api/contact/send', '/api/contact/send'];
         endpoints = endpoints.filter(function(v, i, arr) { return arr.indexOf(v) === i; });
         var payload = {
           siteId: form.dataset.siteId,
@@ -128,18 +132,28 @@ a.button-link {
           message: form.querySelector('[name="message"]').value,
           honeypot: form.querySelector('[name="honeypot"]').value
         };
+        var formPayload = new FormData();
+        formPayload.append('siteId', payload.siteId || '');
+        formPayload.append('name', payload.name || '');
+        formPayload.append('email', payload.email || '');
+        formPayload.append('message', payload.message || '');
+        formPayload.append('honeypot', payload.honeypot || '');
         try {
           var resp = null;
           var lastNetworkError = null;
           var lastHttpResp = null;
           for (var i = 0; i < endpoints.length; i++) {
             try {
-              resp = await fetch(endpoints[i], {
-                  method: 'POST',
-                  mode: 'cors',
-                  headers: { 'Content-Type': 'application/json', 'Accept': 'application/json' },
-                  body: JSON.stringify(payload)
-                });
+              if (endpoints[i].indexOf('send-simple') !== -1) {
+                resp = await fetch(endpoints[i], { method: 'POST', mode: 'cors', body: formPayload });
+              } else {
+                resp = await fetch(endpoints[i], {
+                    method: 'POST',
+                    mode: 'cors',
+                    headers: { 'Content-Type': 'application/json', 'Accept': 'application/json' },
+                    body: JSON.stringify(payload)
+                  });
+              }
               if (resp && resp.ok) {
                 break;
               }
