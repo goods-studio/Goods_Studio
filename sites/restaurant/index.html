@@ -1,0 +1,240 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Restaurant</title>
+  <style>
+html, body { height: 100%; }
+body {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  margin: 0;
+  padding: 1.5rem;
+  background: #0b1220;
+  color: #e5e7eb;
+  font-family: system-ui,-apple-system,sans-serif;
+  font-size: 16px;
+}
+header, footer { margin-bottom: 1rem; }
+footer { margin-top: auto; }
+main {
+  flex: 1 0 auto;
+  background: rgba(15,23,42,.9);
+  padding: 1.25rem;
+  border-radius: .75rem;
+  box-shadow: none;
+}
+img { max-width: 100%; height: auto; display: block; margin: .75rem 0; border-radius: .5rem; }
+a.effect-shadow, .effect-shadow { box-shadow: 0 12px 30px rgba(0, 0, 0, 0.45); }
+a.effect-glow, .effect-glow { box-shadow: 0 0 24px rgba(99, 102, 241, 0.65); }
+.site-title { font-size: 1.5rem; font-weight: 700; margin-bottom: .75rem; }
+.site-header { display: flex; align-items: center; gap: .5rem; padding: .75rem 1rem; border-radius: .25rem; background: rgba(15,23,42,.9); }
+.site-avatar { width: 72px; height: 72px; object-fit: cover; border-radius: 12px; border: 2px solid rgba(255,255,255,.4); box-shadow: 0 8px 20px rgba(0,0,0,.45); }
+a.button-link {
+  display: inline-block;
+  border-radius: 18px;
+  border: none;
+  background: #2563eb;
+  color: #fff;
+  text-decoration: none;
+  cursor: pointer;
+  box-shadow: none;
+}
+.contact-form-shell {
+  max-width: 640px;
+  margin: 1rem auto;
+  padding: 1rem;
+  border-radius: 18px;
+  border: 1px solid rgba(148, 163, 184, 0.35);
+  background: rgba(15,23,42,.9);
+}
+.sb-contact-form {
+  display: grid;
+  gap: .7rem;
+}
+.sb-contact-form input,
+.sb-contact-form textarea {
+  width: 100%;
+  box-sizing: border-box;
+  border: 1px solid rgba(148, 163, 184, .4);
+  border-radius: 12px;
+  padding: .65rem .8rem;
+  background: rgba(0, 0, 0, .08);
+  color: #e5e7eb;
+}
+.sb-contact-form button {
+  border: none;
+  border-radius: 18px;
+  padding: .7rem 1rem;
+  font-weight: 600;
+  background: #2563eb;
+  color: #fff;
+  cursor: pointer;
+  box-shadow: none;
+}
+.sb-hp {
+  position: absolute !important;
+  left: -9999px !important;
+  width: 1px;
+  height: 1px;
+  opacity: 0;
+  pointer-events: none;
+}
+.sb-contact-success,
+.sb-contact-error {
+  margin-top: .55rem;
+  font-size: .95rem;
+}
+.sb-contact-success { color: #34d399; }
+.sb-contact-error { color: #fca5a5; }
+.sb-site-ad {
+  margin: 1rem auto;
+  max-width: 760px;
+  border: 1px solid rgba(148, 163, 184, 0.35);
+  border-radius: 14px;
+  padding: .9rem 1rem;
+  background: rgba(2, 6, 23, 0.3);
+}
+.sb-site-ad-title {
+  font-size: .82rem;
+  text-transform: uppercase;
+  letter-spacing: .08em;
+  opacity: .85;
+  margin-bottom: .25rem;
+}
+.sb-site-ad-text {
+  margin-bottom: .3rem;
+}
+.sb-site-ad-link {
+  color: #2563eb;
+  text-decoration: none;
+}
+.sb-site-ad-link:hover {
+  text-decoration: underline;
+}
+
+  </style>
+</head>
+<body>
+  <div class="site-title " style="text-align:left;color:#e5e7eb">Restaurant</div>
+  <header class="site-header " style="text-align:left;color:#e5e7eb">
+    <div>Fresh menu every day</div>
+  </header>
+  <main>
+    <div class="" style="text-align:left;color:#e5e7eb;font-family:system-ui,-apple-system,sans-serif;font-size:16px;"><h2>Today specials</h2></div>
+    <div class="" style="text-align:left;color:#e5e7eb;font-family:system-ui,-apple-system,sans-serif;font-size:16px;border-radius:12px;box-shadow:none;">
+      <table style="width:100%;border-collapse:collapse;">
+        <tr>
+          <td style="border:1px solid rgba(148,163,184,.35);padding:.55rem .65rem;">Dish</td>
+          <td style="border:1px solid rgba(148,163,184,.35);padding:.55rem .65rem;">Price</td>
+        </tr>
+        <tr>
+          <td style="border:1px solid rgba(148,163,184,.35);padding:.55rem .65rem;">Pasta</td>
+          <td style="border:1px solid rgba(148,163,184,.35);padding:.55rem .65rem;">$14</td>
+        </tr>
+        <tr>
+          <td style="border:1px solid rgba(148,163,184,.35);padding:.55rem .65rem;">Steak</td>
+          <td style="border:1px solid rgba(148,163,184,.35);padding:.55rem .65rem;">$22</td>
+        </tr>
+        <tr>
+          <td style="border:1px solid rgba(148,163,184,.35);padding:.55rem .65rem;">Salad</td>
+          <td style="border:1px solid rgba(148,163,184,.35);padding:.55rem .65rem;">$9</td>
+        </tr>
+      </table>
+    </div>
+    <div class="" style="text-align:left;color:#e5e7eb;font-family:system-ui,-apple-system,sans-serif;font-size:16px;"><p>Open daily: 10:00 - 23:00. City center, Main Street 10.</p></div>
+    <div class="contact-form-shell " style="text-align:left;border-radius:12px;box-shadow:none;">
+      <form class="sb-contact-form" data-site-id="3628d9f7-145b-4ca7-8ecd-f90a3dd345b7" style="grid-template-columns:repeat(1, minmax(0,1fr));">
+        <input type="text" name="name" placeholder="Your name" required style="grid-column: span 1;">
+        <input type="email" name="email" placeholder="Your email" required style="grid-column: span 1;">
+        <textarea name="message" placeholder="Message" rows="5" required style="grid-column:1 / -1;"></textarea>
+        <input type="text" name="honeypot" autocomplete="off" tabindex="-1" class="sb-hp">
+        <button type="submit" style="grid-column:1 / -1;background:#2563eb;border-radius:12px;box-shadow:none;font-family:system-ui,-apple-system,sans-serif;font-size:16px;">Send</button>
+      </form>
+      <div class="sb-contact-success" hidden>Message sent.</div>
+      <div class="sb-contact-error" hidden>Error. Try again later.</div>
+    </div>
+  </main>
+  <!--SB_AD_START-->
+  <aside class="sb-site-ad">
+    <div class="sb-site-ad-title">Advertisement</div>
+    <div class="sb-site-ad-text">Built with SiteBuilding. Create your own website in minutes.</div>
+    <a class="sb-site-ad-link" href="https://sitebuilding.onrender.com/" target="_blank" rel="noopener noreferrer">sitebuilding.onrender.com</a>
+  </aside>
+  <!--SB_AD_END-->
+  <footer class="" style="text-align:left;color:#e5e7eb"><div>Reserve your table</div></footer>
+  <script>
+    document.querySelectorAll('.sb-contact-form').forEach(function(form) {
+      form.addEventListener('submit', async function(event) {
+        event.preventDefault();
+        var card = form.closest('.contact-form-shell');
+        var success = card ? card.querySelector('.sb-contact-success') : null;
+        var error = card ? card.querySelector('.sb-contact-error') : null;
+        if (success) success.hidden = true;
+        if (error) { error.hidden = true; error.textContent = 'Error. Try again later.'; }
+        var endpoints = ['https://sitebuilding.onrender.com/api/messages', 'https://sitebuilding.onrender.com/api/messages', '/api/messages'];
+        endpoints = endpoints.filter(function(v, i, arr) { return arr.indexOf(v) === i; });
+        var payload = {
+          siteId: form.dataset.siteId,
+          name: form.querySelector('[name="name"]').value,
+          email: form.querySelector('[name="email"]').value,
+          message: form.querySelector('[name="message"]').value,
+          honeypot: form.querySelector('[name="honeypot"]').value
+        };
+        try {
+          var resp = null;
+          var lastNetworkError = null;
+          var lastHttpResp = null;
+          for (var i = 0; i < endpoints.length; i++) {
+            try {
+              resp = await fetch(endpoints[i], {
+                method: 'POST',
+                mode: 'cors',
+                headers: { 'Content-Type': 'application/json', 'Accept': 'application/json' },
+                body: JSON.stringify({ siteId: payload.siteId, name: payload.name, email: payload.email, content: payload.message, honeypot: payload.honeypot })
+              });
+              if (resp && resp.ok) {
+                break;
+              }
+              lastHttpResp = resp;
+              resp = null;
+            } catch (networkErr) {
+              lastNetworkError = networkErr;
+            }
+          }
+          if (!resp) {
+            if (lastHttpResp) {
+              resp = lastHttpResp;
+            } else {
+              throw (lastNetworkError || new Error('network_error'));
+            }
+          }
+          if (!resp.ok) {
+            var problem = null;
+            try { problem = await resp.json(); } catch (_) { }
+            var reason = problem && problem.reason ? problem.reason : '';
+            if (error) {
+              if (reason === 'invalid_email') error.textContent = 'Invalid email format.';
+              else if (reason === 'invalid_name') error.textContent = 'Invalid name.';
+              else if (reason === 'invalid_message' || reason === 'invalid_content') error.textContent = 'Invalid message length.';
+              else if (reason === 'rate_limit') error.textContent = 'This device already sent a message. Try again a bit later.';
+              else if (reason === 'limit') error.textContent = 'Daily limit reached. Try again later.';
+              else if (reason === 'site_not_found') error.textContent = 'Site not found. Re-publish the site.';
+              else if (reason === 'spam') error.textContent = 'Message blocked by anti-spam.';
+              else error.textContent = 'Error. Try again later.';
+            }
+            throw new Error('send_failed');
+          }
+          form.reset();
+          if (success) success.hidden = false;
+        } catch (e) {
+          if (error && (!error.textContent || error.textContent === 'Error. Try again later.')) error.textContent = 'Network/CORS error. Try again later.';
+          if (error) error.hidden = false;
+        }
+      });
+    });
+  </script>
+</body>
+</html>
